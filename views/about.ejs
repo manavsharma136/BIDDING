@@ -1,0 +1,99 @@
+<% include header.ejs %>
+
+
+
+<div id="pageintro" class="hoc clear">
+    <div class="flexslider basicslider">
+      <ul class="slides">
+
+      </ul>
+    </div>
+
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <div class="wk_login">
+  <form class="form-group" method="post" autocomplete="off" name="form" ng-init="run()" action="/register">
+					<div class="container">
+						<h1  align=center>About us   </h1>
+						<h1>We  are best  to provide  best services   for  projects, we  are  dealing with project  since  10 years.</h1>
+    </div>
+
+
+
+  </main>
+</div>
+<section class="py-5 bg-image overlay-primary fixed overlay" id="next-section"
+  style="background-image: url('images/hero_1.jpg');">
+  <div class="container">
+    <div class="row mb-5 justify-content-center">
+      <div class="col-md-7 text-center">
+        <h2 class="section-title mb-2 text-white">JobBoard Site Stats</h2>
+        <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita unde officiis
+          recusandae sequi excepturi corrupti.</p>
+      </div>
+    </div>
+    <div class="row pb-0 block__19738 section-counter">
+
+      <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <strong class="number" data-number="1930">0</strong>
+        </div>
+        <span class="caption">Candidates</span>
+      </div>
+
+      <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <strong class="number" data-number="54">0</strong>
+        </div>
+        <span class="caption">Jobs Posted</span>
+      </div>
+
+      <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <strong class="number" data-number="120">0</strong>
+        </div>
+        <span class="caption">Jobs Filled</span>
+      </div>
+
+      <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <strong class="number" data-number="550">0</strong>
+        </div>
+        <span class="caption">Companies</span>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<% include footer.ejs %>
+
+<script>
+	function comparePass() {
+		var password = document.getElementById("usrPass").value;
+		var password2 = document.getElementById("rptPass").value;
+		var ok = true;
+		if (password != password2) {
+			document.getElementById("alert").style.display = "block";
+			document.getElementById("myBtn").type = 'button';
+			ok = false;
+		} else {
+			document.getElementById("alert").style.display = "none";
+			document.getElementById("myBtn").type = 'submit';
+		}
+		return ok;
+	}
+
+	var app = angular.module('signUp', []);
+	app.controller("sign_up", ['$scope', '$http', function($scope, $http) {
+		$scope.onUserChange = function() {
+			$scope.dropData = $scope.selectedId;
+			console.log($scope.selectedId.id);
+		}
+	}]);
+</script>

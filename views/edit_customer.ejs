@@ -1,0 +1,81 @@
+<%- include header.ejs %>
+<div id="pageintro" class="hoc clear"> 
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p>Tincidunt</p>
+            <h3 class="heading">Tempor enim eros</h3>
+            <p>Neque vel mattis metus blandit dapibus</p>
+            <footer>
+              <form class="group" method="post" action="#">
+                <fieldset>
+                  <legend>Newsletter:</legend>
+                  <input type="email" value="" placeholder="Email Here&hellip;">
+                  <button class="fa fa-sign-in" type="submit" title="Submit"><em>Submit</em></button>
+                </fieldset>
+              </form>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Vulputate</p>
+            <h3 class="heading">Rhoncus nisl non</h3>
+            <p>Interdum erat ipsum quis leo viverra magna</p>
+            <footer><a class="btn inverse" href="#">Fusce efficitur</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Maecenas</p>
+            <h3 class="heading">Diam feugiat tellus</h3>
+            <p>Aliquam ante odio at condimentum mauris</p>
+            <footer><a class="btn" href="#">Tincidunt etiam</a></footer>
+          </article>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+        <div class="page-data">
+            
+            <form method="post" action="/customers/edit/<%=data[0].id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="name" value="<%=data[0].username%>" required></td>
+                 </tr>
+                 
+                
+				<tr>
+                    <td class="label">Project Title</td><td>: <input type="text" name="projectname" value="<%=data[0].projecttitle%>" required></td>
+                 </tr>
+				 <tr>
+                    <td class="label">Project Description</td><td>: <input type="text" name="projectdescription" value="<%=data[0].projectdescription%>" required></td>
+                 </tr>
+				 <tr>
+                    <td class="label">Project Price</td><td>: <input type="text" name="projectprice" value="<%=data[0].projectprice%>" required></td>
+                 </tr>
+				 
+                <tr>
+                    <td class="label">Email</td><td>: <input type="text" value="<%=data[0].email%>" name="email" required></td>
+                 </tr>
+                  
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        </main>
+		</div>
+<%- include footer.ejs %>

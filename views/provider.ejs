@@ -1,0 +1,52 @@
+<% include header.ejs %>
+<div id="pageintro" class="hoc clear">
+    <div class="flexslider basicslider">
+
+    </div>
+
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3" >
+  <main class="hoc container clear">
+        <div class="page-data" >
+            <h1  align=center>ENTER PROJECT DETAILS <%=data[0].id%></h1>
+                                                                 ////////HERE I HAVE CHANGED ID S
+                 <h1></h1>
+                        <form method="POST" action="/add/<%=data[0].id%>">
+                <table cellpadding="20" style="background-color: #F0FFFF;">
+
+                 <tr>
+                    <td valign="top"> TITLE</td><td valign="top">: <input type="text" name="projectname" required></td>
+                </tr>
+				<tr>
+                    <td  valign="top"> DESCRIPTION</td><td valign="top">: <input type="text" name="projectdescription" required></td>
+                </tr>
+				<tr>
+                    <td  valign="top">PRICE</td><td valign="top">: <input type="text" name="price" required></td>
+                </tr>
+
+                <tr>
+                    <td >EMAIL</td><td>: <input type="text" name="email" required></td>
+                 </tr>
+
+                 <tr>
+                    <td ></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="SUBMIT">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+
+			<div class='col-lg-6'>
+				<span class="form-control"><a href="http://localhost:3000/jobseeker"> View All Projects </a></span>
+				<span class="form-control"><a href="http://localhost:3000/checkOrder/<%=data[0].id%>"> Check Orders </a></span>
+
+			</div>
+        </div>
+      </main>
+	  </div>
+
+<% include footer.ejs %>

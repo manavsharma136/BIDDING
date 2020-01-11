@@ -1,0 +1,11 @@
+extends layout
+
+block title
+  title Overriden Example
+
+block scripts
+  script(src="http://code.jquery.com/jquery-1.10.0.min.js")
+  script(src="/home.js")
+
+block body
+  p Hello #{sayHelloTo}.

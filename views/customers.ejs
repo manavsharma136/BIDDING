@@ -1,0 +1,88 @@
+<%- include header.ejs %>
+<div id="pageintro" class="hoc clear"> 
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p>Tincidunt</p>
+            <h3 class="heading">Tempor enim eros</h3>
+            <p>Neque vel mattis metus blandit dapibus</p>
+            <footer>
+              <form class="group" method="post" action="#">
+                <fieldset>
+                  <legend>Newsletter:</legend>
+                  <input type="email" value="" placeholder="Email Here&hellip;">
+                  <button class="fa fa-sign-in" type="submit" title="Submit"><em>Submit</em></button>
+                </fieldset>
+              </form>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Vulputate</p>
+            <h3 class="heading">Rhoncus nisl non</h3>
+            <p>Interdum erat ipsum quis leo viverra magna</p>
+            <footer><a class="btn inverse" href="#">Fusce efficitur</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Maecenas</p>
+            <h3 class="heading">Diam feugiat tellus</h3>
+            <p>Aliquam ante odio at condimentum mauris</p>
+            <footer><a class="btn" href="#">Tincidunt etiam</a></footer>
+          </article>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+        <div class="page-data">
+         <div class="data-btn">
+           <button onClick="addUser();">+ Add</button>
+         </div>
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>Name</th>
+                    <th>Project</th>
+                    
+                    <th>Email</th>
+                    <th width="120px">Action</th>
+                <% if(data.length){ 
+							for(var i = 0;i < data.length;i++) { %>
+						<tr>
+							<td><%=(i+1)%></td>
+							<td><%=data[i].username%> 
+							
+							<td><%=data[i].projecttitle%></td>
+							<td><%=data[i].email%></td>
+							<td>
+                        <a class="a-inside edit" href="../customers/edit/<%=data[i].id%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../customers/delete/<%=data[i].id%>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+   </main>
+</div>   
+<%- include footer.ejs %>

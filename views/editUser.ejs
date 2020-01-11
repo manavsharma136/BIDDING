@@ -1,0 +1,90 @@
+<% include header.ejs %>
+<div id="pageintro" class="hoc clear"> 
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p>Tincidunt</p>
+            <h3 class="heading">Tempor enim eros</h3>
+            <p>Neque vel mattis metus blandit dapibus</p>
+            <footer>
+              <form class="group" method="post" action="#">
+                <fieldset>
+                  <legend>Newsletter:</legend>
+                  <input type="email" value="" placeholder="Email Here&hellip;">
+                  <button class="fa fa-sign-in" type="submit" title="Submit"><em>Submit</em></button>
+                </fieldset>
+              </form>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Vulputate</p>
+            <h3 class="heading">Rhoncus nisl non</h3>
+            <p>Interdum erat ipsum quis leo viverra magna</p>
+            <footer><a class="btn inverse" href="#">Fusce efficitur</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Maecenas</p>
+            <h3 class="heading">Diam feugiat tellus</h3>
+            <p>Aliquam ante odio at condimentum mauris</p>
+            <footer><a class="btn" href="#">Tincidunt etiam</a></footer>
+          </article>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+   		<div class="feature-section">
+			<div class="">
+			<% if(data.length){ %>
+				<form class="form-group" method="post" autocomplete="off" action="/update">
+					<div class="container">
+						<h1> Update User </h1>
+						<hr>
+						<div class="form-group">
+							<label for="username"><b>UserName</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter UserName" class="form-control" value='<%=data[0].username%>' readonly required>
+						</div>
+						<div class="form-group">
+							<label for="email"><b>Email</b></label>
+							<input type="email" id="usrPass" autocomplete="off" placeholder="Enter Password" value='<%=data[0].email%>' class="form-control" readonly required>
+							<input type="hidden" id="usrPass" autocomplete="off" placeholder="Enter Password" value='<%=data[0].id%>' class="form-control" name='id' required>
+						</div>
+						<div class="form-group">
+							<label for="fName"><b>First Name</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter First Name" class="form-control" value='<%=data[0].firstName%>' name="firstName" required>
+						</div>
+						<div class="form-group">
+							<label for="lName"><b>Last Name</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter Last Name" class="form-control" value='<%=data[0].lastName%>' name="lastName" required>
+						</div>
+						<div class="form-group">
+							<label for="contact"><b>Contact</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter Contact" class="form-control" value='<%=data[0].contact%>' name="contact" required>
+						</div>
+	<div class="clearfix">
+							<button type="submit" id="myBtn" class="btn btn-default">Update User </button>
+						</div>
+					</div>
+				</form>
+				<% 	} else{ %>
+				<div class="form-group">
+					<p>Invalid User</p>
+				</div>
+				<% } %>
+			</div>
+		</div>
+
+
+
+<% include footer.ejs %>
+

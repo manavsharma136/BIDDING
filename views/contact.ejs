@@ -1,0 +1,81 @@
+<% include header.ejs %>
+
+
+
+<div id="pageintro" class="hoc clear"> 
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        
+      </ul>
+    </div>
+    
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <div class="wk_login">
+  <form class="form-group" method="post" autocomplete="off" name="form" ng-init="run()" action="/register">
+					<div class="container">
+						<h1  align=center>Contact us  page </h1>
+						<p>Please fill in this form to create an account.</p>
+						<hr>
+						<div class="form-group">
+							<label for="username"><b>UserName</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter UserName" class="form-control" name="userName" required>
+						</div>
+						
+						<div class="form-group">
+							<label for="email"><b>Email</b></label>
+							<input type="email" autocomplete="off" placeholder="Enter Email" class="form-control" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="contact"><b>Contact No</b></label>
+							<input type="number" autocomplete="off" placeholder="Enter Mobile No" class="form-control" name="contact" required>
+						</div>
+						
+						
+						<div class="form-group">
+						</div>
+						<div class="clearfix">
+							<button type="reset" class="btn btn-warning">Reset</button>
+							<button type="button" id="myBtn" class="btn btn-default">Sign Up</button>
+							<a href="/login" style="float:right;">Already Account? </a>
+						</div>
+					</div>
+				</form>
+    </div>
+    
+      
+    
+  </main>
+</div>
+
+
+<% include footer.ejs %>
+
+<script>
+	function comparePass() {
+		var password = document.getElementById("usrPass").value;
+		var password2 = document.getElementById("rptPass").value;
+		var ok = true;
+		if (password != password2) {
+			document.getElementById("alert").style.display = "block";
+			document.getElementById("myBtn").type = 'button';
+			ok = false;
+		} else {
+			document.getElementById("alert").style.display = "none";
+			document.getElementById("myBtn").type = 'submit';
+		}
+		return ok;
+	}
+
+	var app = angular.module('signUp', []);
+	app.controller("sign_up", ['$scope', '$http', function($scope, $http) {
+		$scope.onUserChange = function() {
+			$scope.dropData = $scope.selectedId;
+			console.log($scope.selectedId.id);
+		}
+	}]);
+</script>

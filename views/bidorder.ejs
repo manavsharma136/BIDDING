@@ -1,0 +1,80 @@
+<% include header.ejs %>
+<div id="pageintro" class="hoc clear">
+    <div class="flexslider basicslider">
+
+    </div>
+
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <div class="wk_jobseeker">
+  <h1> All  Projects </h1>
+					<hr>
+					<table border="1" cellpadding="7" cellspacing="7">
+						<tr>
+							<th width="50px">No</th>
+							<th>Project Title</th>
+
+							<th>Projects Description</th>
+
+							<th>Project Budget  (in $)</th>
+							<th>Bidded Amount  (in $)</th>
+							<th>Bidded By</th>
+
+
+							<th>Action</th>
+						</tr>
+						<% if(data.length){
+							for(var i = 0;i < data.length;i++) { %>
+						<tr>
+							<td><%=(i+1)%></td>
+							<td> <%=data[i].projTitle%></td>
+
+							<td> <%=data[i].projDesc%></td>
+							<td> <%=data[i].Price%></td>
+							<td> <%=data[i].bidPrice%></td>
+							<td> <%=data[i].firstName%> <%=data[i].lastName%></td>
+							<td>
+							<form action="finaldecision" method="Post">
+								<input type="hidden" name="bidby" value="<%=data[i].bidBy%>">
+								<input type="hidden" name="pid" value="<%=data[i].bidProj%>">
+								<select class="form-control" name="decison" required>
+									<option value="">Choose Decision</option>
+									<option <% if(data[i].actionBy == 'Accept'){ %> selected  <% }%> value="Accept">Accept</option>
+									<option <% if(data[i].actionBy == 'Reject'){ %> selected  <% }%> value="Reject">Reject</option>
+								</select>
+								<input type="submit" value="Take Decision">
+							</form>
+              <!--form action="call1" method="post">
+                  <input type="submit" value="inform">
+                </form-->
+
+
+							</td>
+						</tr>
+						<% }
+							}else{ %>
+						<tr>
+							<td colspan="6">No user</td>
+						</tr>
+						<% } %>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Login Area -->
+    </div>
+
+
+
+  </main>
+</div>
+
+
+<% include footer.ejs %>

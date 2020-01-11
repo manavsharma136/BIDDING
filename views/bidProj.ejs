@@ -1,0 +1,68 @@
+<% include header.ejs %>
+<div id="pageintro" class="hoc clear">
+    <div class="flexslider basicslider">
+
+    </div>
+
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <div class="wk_jobseeker">
+  <h1> Add Your Quote </h1>
+					<hr>
+					<table border="1" cellpadding="7" cellspacing="7">
+						<tr>
+							<th width="50px">No</th>
+							<th>Project Title</th>
+
+							<th>Projects Description</th>
+
+							<th>Project Budget (in $)</th>
+
+
+							<th width="120px">Add Your Price</th>
+							<th width="120px">Action</th>
+						</tr>
+						<% if(data.length){
+							for(var i = 0;i < data.length;i++) { %>
+						<tr>
+							<td><%=(i+1)%></td>
+							<td> <%=data[i].projTitle%></td>
+
+							<td> <%=data[i].projDesc%></td>
+							<td> <%=data[i].Price%></td>
+							<form action="http://localhost:3000/bidDone/<%=uner%>" method="Post">
+							<td>
+								<input type='number' name="userPrice">
+								<input type='hidden' name="pid" value="<%=data[i].Id%>">
+
+							</td>
+							<td><input type='submit' name="Submit Your Bid"></td>
+							</form>
+						</tr>
+						<% }
+							}else{ %>
+						<tr>
+							<td colspan="6">No Project</td>
+						</tr>
+						<% } %>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Login Area -->
+    </div>
+
+
+
+  </main>
+</div>
+
+
+<% include footer.ejs %>

@@ -1,0 +1,129 @@
+
+<% include header.ejs %>
+
+
+
+<div id="pageintro" class="hoc clear">
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p>Tincidunt</p>
+            <h3 class="heading">Project</h3>
+            <p>Online Bidding</p>
+
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Vulputate</p>
+            <h3 class="heading">Rhoncus nisl non</h3>
+            <p>Interdum erat ipsum quis leo viverra magna</p>
+            <footer><a class="btn inverse" href="#">Fusce efficitur</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Maecenas</p>
+            <h3 class="heading">Diam feugiat tellus</h3>
+            <p>Aliquam ante odio at condimentum mauris</p>
+            <footer><a class="btn" href="#">Tincidunt etiam</a></footer>
+          </article>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  </div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <div class="wk_login">
+  <form class="form-group" method="post" autocomplete="off" name="form" ng-init="run()" action="/register">
+					<div class="container">
+						<h1>Sign Up</h1>
+						<p>Please fill in this form to create an account.</p>
+						<hr>
+						<div class="form-group">
+							<label for="role"><b>Role</b></label>
+							<select name='role' class="form-control" required>
+								<option value="">Select Role</option>
+								<option value="3">Job Seeker</option>
+								<option value="2">Post Jobs</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="username"><b>UserName</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter UserName" class="form-control" name="userName" required>
+						</div>
+						<div class="form-group">
+							<label for="firstname"><b>First Name</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter First Name" class="form-control" name="firstName" required>
+						</div>
+						<div class="form-group">
+							<label for="lastname"><b>Last Name</b></label>
+							<input type="text" autocomplete="off" placeholder="Enter Last Name" class="form-control" name="lastName" required>
+						</div>
+						<div class="form-group">
+							<label for="email"><b>Email</b></label>
+							<input type="email" autocomplete="off" placeholder="Enter Email" class="form-control" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="contact"><b>Contact No</b></label>
+							<input type="number" autocomplete="off" placeholder="Enter Mobile No" class="form-control" name="contact" required>
+						</div>
+						<div class="form-group">
+							<label for="psw"><b>Password</b></label>
+							<input type="password" id="usrPass" autocomplete="off" placeholder="Enter Password" class="form-control" name="password" ng-model="password" required>
+							<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+						</div>
+						<div class="form-group">
+							<label for="psw-repeat"><b>Repeat Password</b></label>
+							<input type="password" id="rptPass" onkeyup="comparePass()" autocomplete="off" placeholder="Repeat Password" class="form-control" required>
+							<span id="alert" style="display:none;color:red;"> Password Not Matched!! </span>
+						</div>
+						<div class="form-group">
+						</div>
+						<div class="clearfix">
+							<button type="reset" class="btn btn-warning">Reset</button>
+							<input type="submit" id="myBtn" class="btn btn-default">Sign Up
+							<a href="/login" style="float:right;">Already Account? </a>
+						</div>
+					</div>
+				</form>
+    </div>
+
+
+
+  </main>
+</div>
+
+
+<% include footer.ejs %>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+	function comparePass() {
+		var password = document.getElementById("usrPass").value;
+		var password2 = document.getElementById("rptPass").value;
+		var ok = true;
+		if (password != password2) {
+			document.getElementById("alert").style.display = "block";
+			document.getElementById("myBtn").type = 'button';
+			ok = false;
+		} else {
+			document.getElementById("alert").style.display = "none";
+			document.getElementById("myBtn").type = 'submit';
+		}
+		return ok;
+	}
+</script>
+<!--script>
+	var app = angular.module('signUp', []);
+	app.controller("sign_up", ['$scope', '$http', function($scope, $http) {
+		$scope.onUserChange = function() {
+			$scope.dropData = $scope.selectedId;
+			console.log($scope.selectedId.id);
+		}
+	}]);
+  </script-->
