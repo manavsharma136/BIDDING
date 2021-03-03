@@ -14,7 +14,7 @@
     "mysql": "^2.15.0",
     "nodemailer": "^6.3.1",
     "nodemailer-smtp-transport": "^2.7.4",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "routes": "^2.1.0",
     "sendgrid": "^5.2.3",
     "twilio": "^3.37.1"
